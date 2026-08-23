@@ -30,7 +30,8 @@ document.body.appendChild(renderer.domElement)
 function animate(){
   // console.log("three.js is running!!!")
   cube.rotation.y+=0.01
-  cube.rotation.x+=0.01
+  // cube.rotation.x+=0.01
+  // cube.rotation.z+=0.01
   renderer.render(scene,camera)
 }
 
