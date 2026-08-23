@@ -1,9 +1,11 @@
 import * as THREE from 'three'
 
 const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
 
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
 scene.add(camera)
+
+console.log(camera.position)
 
 /* MESH => (shape & material) */
 const cubeGeometry=new THREE.BoxGeometry(1,1,1)
@@ -12,5 +14,19 @@ const cubeMaterial=new THREE.MeshStandardMaterial({
 })
 const cube=new THREE.Mesh(cubeGeometry,cubeMaterial)
 scene.add(cube)
+console.log(cube.position)
+
+
 const light=new THREE.DirectionalLight(0xffffff,1)
 scene.add(light)
+console.log(light.position)
+
+const renderer=new THREE.WebGLRenderer()
+renderer.setSize(window.innerWidth,window.innerHeight)
+document.body.appendChild(renderer.domElement)
+
+function animate(){
+  renderer.render(scene,camera)
+}
+
+renderer.setAnimationLoop(animate)
