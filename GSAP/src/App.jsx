@@ -12,16 +12,15 @@ function App() {
       scrollTrigger:{
         trigger:"#section-1",
         start:"top top",
-        endTrigger:"#section-4",
-        end:"top top",
+        markers:true,
         scrub:true,
-        pin:true,
-        markers:true
+        endTrigger:"#section-4",
+        end:"top top"
       }
     })
-    tl.to('html',{
-      backgroundColor:"#995555"
-    })
+    tl.to('html', { backgroundColor: "#995555" })
+      .to('html', { backgroundColor: "#559955" })
+      .to('html', { backgroundColor: "#555599" });
     // gsap.to("html", {
     //   backgroundColor: "maroon",
     //   scrollTrigger: {
