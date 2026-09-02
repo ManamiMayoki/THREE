@@ -8,17 +8,31 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useGSAP(() => {
-    gsap.to("html", {
-      backgroundColor: "maroon",
-      scrollTrigger: {
-        trigger: "#section-1",
-        start: "top top",
-        markers: true,
-        scrub: true,
-        endTrigger: "#section-4",
-        end: "top top"
+    const tl=gsap.timeline({
+      scrollTrigger:{
+        trigger:"#section-1",
+        start:"top top",
+        endTrigger:"#section-4",
+        end:"top top",
+        scrub:true,
+        pin:true,
+        markers:true
       }
-    });
+    })
+    tl.to('html',{
+      backgroundColor:"#995555"
+    })
+    // gsap.to("html", {
+    //   backgroundColor: "maroon",
+    //   scrollTrigger: {
+    //     trigger: "#section-1",
+    //     start: "top top",
+    //     markers: true,
+    //     scrub: true,
+    //     endTrigger: "#section-4",
+    //     end: "top top"
+    //   }
+    // });
   }, []); 
 
   return (
